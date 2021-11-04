@@ -19,10 +19,10 @@ mysql:
 
 
 alibabacloud:
-  accessKeyId: LTAI5tJPkn4HuuePdiLdGqe7
-  accessKeySecret: 4n9OJ7ZCVN1U6KeHDAtOyNeVZcjOuV
-  SignName: 托云信息技术
-  VerificationCodeTemplateCode: SMS_226810164
+  accessKeyId: 
+  accessKeySecret: 
+  SignName: 
+  VerificationCodeTemplateCode: 
 
 
 imserver:
