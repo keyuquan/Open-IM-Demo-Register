@@ -1,0 +1,43 @@
+api:
+  port: 42233
+
+redis:
+  dbAddress: 47.112.160.66:6379
+  dbMaxIdle: 128
+  dbMaxActive: 0
+  dbIdleTimeout: 120
+  dbPassWord: openIM
+
+mysql:
+  dbAddress: 47.112.160.66:3306
+  dbUserName: root
+  dbPassword: openIM
+  dbName: CompanyChat
+  dbMaxOpenConns: 20
+  dbMaxIdleConns: 10
+  dbMaxLifeTime: 120
+
+
+alibabacloud:
+  accessKeyId: LTAI5tJPkn4HuuePdiLdGqe7
+  accessKeySecret: 4n9OJ7ZCVN1U6KeHDAtOyNeVZcjOuV
+  SignName: 托云信息技术
+  VerificationCodeTemplateCode: SMS_226810164
+
+
+imserver:
+  ip: 47.112.160.66
+  secret: tuoyun
+  superCode: 666666
+
+
+log:
+  storageLocation: ../logs/
+  rotationTime: 12
+  remainRotationCount: 10
+  elasticSearchSwitch: false
+  elasticSearchAddr: [ 47.112.160.66:9201 ]
+  elasticSearchUser: ""
+  elasticSearchPassword: ""
+
+
