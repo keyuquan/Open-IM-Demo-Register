@@ -1,17 +1,17 @@
 api:
   port: 42233
-
+superCode: 123456
 redis:
-  dbAddress: 47.112.160.66:6379
+  dbAddress: 127.0.0.1:6379
   dbMaxIdle: 128
   dbMaxActive: 0
   dbIdleTimeout: 120
-  dbPassWord: openIM
+  dbPassWord: vyTB3bHklcHZnjx
 
 mysql:
-  dbAddress: 47.112.160.66:3306
+  dbAddress: 127.0.0.1:3306
   dbUserName: root
-  dbPassword: openIM
+  dbPassword: FFS0PG3pBWZ3dji6Yn
   dbName: CompanyChat
   dbMaxOpenConns: 20
   dbMaxIdleConns: 10
@@ -19,14 +19,14 @@ mysql:
 
 
 alibabacloud:
-  accessKeyId: 
-  accessKeySecret: 
-  SignName: 
-  VerificationCodeTemplateCode: 
+  accessKeyId:
+  accessKeySecret:
+  SignName:
+  VerificationCodeTemplateCode:
 
 
 imserver:
-  ip: 47.112.160.66
+  ip: 127.0.0.1
   secret: tuoyun
   superCode: 666666
 
@@ -36,7 +36,7 @@ log:
   rotationTime: 12
   remainRotationCount: 10
   elasticSearchSwitch: false
-  elasticSearchAddr: [ 47.112.160.66:9201 ]
+  elasticSearchAddr: [ 127.0.0.1:9201 ]
   elasticSearchUser: ""
   elasticSearchPassword: ""
 
