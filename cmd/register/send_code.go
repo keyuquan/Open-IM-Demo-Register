@@ -45,7 +45,7 @@ func SendVerificationCode(c *gin.Context) {
 	client, err := CreateClient(tea.String(config.Config.Alibabacloud.AccessKeyId), tea.String(config.Config.Alibabacloud.AccessKeySecret))
 	if err != nil {
 		log.ErrorByKv("create sendSms client err", "", "err", err.Error())
-		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": err.Error()})
+		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": "Enter the superCode directly in the verification code box, SuperCode can be configured in config.xml"})
 		return
 	}
 
@@ -62,12 +62,12 @@ func SendVerificationCode(c *gin.Context) {
 	response, err := client.SendSms(sendSmsRequest)
 	if err != nil {
 		log.ErrorByKv("sendSms error", params.PhoneNumber, "err", err.Error())
-		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": err.Error()})
+		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": "Enter the superCode directly in the verification code box, SuperCode can be configured in config.xml"})
 		return
 	}
 	if *response.Body.Code != "OK" {
 		log.ErrorByKv("alibabacloud sendSms error", params.PhoneNumber, "err", response.Body.Code, response.Body.Message)
-		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": *response.Body.Message})
+		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": "Enter the superCode directly in the verification code box, SuperCode can be configured in config.xml"})
 		return
 	}
 
@@ -77,7 +77,7 @@ func SendVerificationCode(c *gin.Context) {
 	v, err := redis.Int(redisConn.Do("TTL", params.PhoneNumber))
 	if err != nil {
 		log.ErrorByKv("get phoneNumber from redis error", params.PhoneNumber, "err", err.Error())
-		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": err.Error()})
+		c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": "Enter the superCode directly in the verification code box, SuperCode can be configured in config.xml"})
 		return
 	}
 	switch {
@@ -85,7 +85,7 @@ func SendVerificationCode(c *gin.Context) {
 		_, err = redisConn.Do("SET", params.PhoneNumber, code, "EX", 600)
 		if err != nil {
 			log.ErrorByKv("set redis error", params.PhoneNumber, "err", err.Error())
-			c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": err.Error()})
+			c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": "Enter the superCode directly in the verification code box, SuperCode can be configured in config.xml"})
 			return
 		}
 		data := make(map[string]interface{})
@@ -102,7 +102,7 @@ func SendVerificationCode(c *gin.Context) {
 	case v < 540:
 		_, err = redisConn.Do("SET", params.PhoneNumber, code, "EX", 600)
 		if err != nil {
-			c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": err.Error()})
+			c.JSON(http.StatusOK, gin.H{"errCode": my_err.IntentionalError, "errMsg": "Enter the superCode directly in the verification code box, SuperCode can be configured in config.xml"})
 			return
 		}
 		data := make(map[string]interface{})
