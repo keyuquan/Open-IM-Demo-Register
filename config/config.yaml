@@ -12,7 +12,7 @@ mysql:
   dbAddress: 127.0.0.1:3306
   dbUserName: root
   dbPassword: FFS0PG3pBWZ3dji6Yn
-  dbName: CompanyChat
+  dbName: openIm
   dbMaxOpenConns: 20
   dbMaxIdleConns: 10
   dbMaxLifeTime: 120
