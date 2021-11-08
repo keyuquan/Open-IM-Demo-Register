@@ -26,7 +26,7 @@ alibabacloud:
 
 
 imserver:
-  ip: 172.24.102.24
+  ip: 172.24.102.246
   secret: tuoyun
   superCode: 666666
 
