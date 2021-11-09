@@ -2,17 +2,17 @@ api:
   port: 42233
 superCode: 123456
 redis:
-  dbAddress: 127.0.0.1:6379
+  dbAddress: redis:6379
   dbMaxIdle: 128
   dbMaxActive: 0
   dbIdleTimeout: 120
   dbPassWord: vyTB3bHklcHZnjx
 
 mysql:
-  dbAddress: 127.0.0.1:3306
+  dbAddress: mysql8
   dbUserName: root
   dbPassword: FFS0PG3pBWZ3dji6Yn
-  dbName: openIm
+  dbName: openIM
   dbMaxOpenConns: 20
   dbMaxIdleConns: 10
   dbMaxLifeTime: 120
@@ -32,7 +32,7 @@ imserver:
 
 
 log:
-  storageLocation: ../logs/
+  storageLocation: ./logs/
   rotationTime: 12
   remainRotationCount: 10
   elasticSearchSwitch: false

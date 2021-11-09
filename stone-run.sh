@@ -1,0 +1,1 @@
+ssh aliyun-stone "cd registerserver && bash run.sh"
