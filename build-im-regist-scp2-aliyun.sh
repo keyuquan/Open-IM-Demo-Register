@@ -50,16 +50,14 @@ services:
   registerserver:
     build: .
     container_name: 'registerserver'
-    expose:
-      - "42233"
+    ports:
+      - "42233:42233"
     restart: always
     networks:
       - traefik
     labels:
       - "traefik.enable=true"
-#      - "traefik.port=42233"
       - "traefik.docker.network=traefik"
-#      - "traefik.frontend.entryPoints==registerapi"
     logging:
       driver: "json-file"
       options:
